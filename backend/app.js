@@ -12,7 +12,7 @@ app.use(express.json()); // Body parser middleware
 
 
 app.get('/',(req,res)=>{
-    res.send('connected');
+    res.json('connected');
 })
 // Routes
 app.use('/api/v1/shorturl', urlShorterRouter);
