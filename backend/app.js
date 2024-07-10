@@ -9,10 +9,16 @@ const app = express();
 // Middleware
 app.use(express.json()); // Body parser middleware
 
-
-
 app.get('/',(req,res)=>{
-    res.json('connected');
+    res.json({
+        'message':'hello world'
+    });
+})
+
+app.get('/hello',(req,res)=>{
+    res.json({
+        'message':'hello world'
+    });
 })
 // Routes
 app.use('/api/v1/shorturl', urlShorterRouter);
