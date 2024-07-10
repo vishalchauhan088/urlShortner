@@ -25,7 +25,7 @@ export const validateUrl = (req,res,next)=>{
 
 
 
-export const createUrl = async ( req, res)=>{
+export const createUrl = async ( req, res,next)=>{
     try{
         const originalUrl = req.body.originalUrl;
         const id = nanoid(5);

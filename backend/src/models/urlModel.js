@@ -4,12 +4,12 @@ const urlSchema = new mongoose.Schema({
     originalUrl:{
         type:String,
         required:true,
-        unique:true
+        
     },
     id:{
         type:String,
         required:true,
-        unique:true
+        unique:true 
     },
     clicks:{
         type:Number,
