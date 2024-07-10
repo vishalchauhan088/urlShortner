@@ -30,6 +30,7 @@ function App() {
       let url;
       if( import.meta.env.VITE_ENV === 'Production'){
         url = `${import.meta.VITE_PROD_URL}/api/v1/shorturl`
+        console.log(url);
       }
       else{
         url = '/api/v1/shorturl'
