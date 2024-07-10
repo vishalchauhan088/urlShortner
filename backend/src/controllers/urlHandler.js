@@ -4,7 +4,7 @@ import urlModel from "../models/urlModel.js";
 
 
 
-const validateUrl = (req,res,next)=>{
+export const validateUrl = (req,res,next)=>{
     console.log(`request received ${req.body.originalUrl}`)
     try{
         const requrl = req.body.originalUrl;
@@ -23,29 +23,9 @@ const validateUrl = (req,res,next)=>{
 
 // searching if url is present
 
-const searchUrl = async (req,res,next)=>{
-    try{
-       
-        const result = await urlModel.findOne({originalUrl:req.body.originalUrl});
-        if(!result){
-            console.log("no previous resul found for this url");
-            next();
-        }
-        else{
-            res.status(200).json({
-                "status":"success",
-                "url":`http://${process.env.DOMAIN}:${process.env.PORT}/api/v1/shorturl/${result.id}`
-            })
-        }
-    }
-    catch(err){
-        res.status(500).json({
-            "status":"failed",
-        })
-    }
-}
 
-const createUrl = async ( req, res)=>{
+
+export const createUrl = async ( req, res)=>{
     try{
         const originalUrl = req.body.originalUrl;
         const id = nanoid(5);
@@ -81,7 +61,7 @@ const createUrl = async ( req, res)=>{
 
 }
 
-const checkReqid = (req,res,next)=>{
+export const checkReqid = (req,res,next)=>{
     if(!req.params.id){
         res.status(500).json({
             "status":"failed",
@@ -93,7 +73,7 @@ const checkReqid = (req,res,next)=>{
     }
 }
 
-const urlClick = async (req,res) =>{
+export const urlClick = async (req,res) =>{
     try{
         console.log('clicked');
         const id = req.params.id;
@@ -108,4 +88,3 @@ const urlClick = async (req,res) =>{
     }
 }
 
-export {validateUrl,searchUrl,createUrl,urlClick,checkReqid}
