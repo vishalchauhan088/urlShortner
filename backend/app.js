@@ -2,6 +2,7 @@
 import express from 'express';
 import urlShorterRouter from './src/routes/shortUrl.js';
 import userRouter from './src/routes/user.js';
+import cors from 'cors';
 
 const app = express();
 

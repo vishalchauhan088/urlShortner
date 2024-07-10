@@ -18,7 +18,7 @@ catch(err){
 
 
 
-
+console.log(process.env.NODE_ENV);
 
 // Start the server
 const port = process.env.PORT || 8000;

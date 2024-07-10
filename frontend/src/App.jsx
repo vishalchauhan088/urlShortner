@@ -27,7 +27,14 @@ function App() {
 
   const handleApiCall = async () => {
     try {
-      const response = await axios.post('/api/v1/shorturl', {
+      let url;
+      if( import.meta.env.VITE_ENV === 'Production'){
+        url = `${import.meta.VITE_PROD_URL}/api/v1/shorturl`
+      }
+      else{
+        url = '/api/v1/shorturl'
+      }
+      const response = await axios.post(url, {
         originalUrl: inputValue
       });
       console.log(response);

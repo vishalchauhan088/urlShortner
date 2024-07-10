@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r dotenv/config --experimental-json-modules  index.js"
+    "start": "nodemon -r dotenv/config --experimental-json-modules  index.js",
+    "start:prod": "set NODE_ENV=production&& nodemon -r dotenv/config --experimental-json-modules index.js"
   },
   "author": "vishal chauhan",
   "license": "ISC",

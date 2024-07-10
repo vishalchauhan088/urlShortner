@@ -1,17 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-//
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  server:{
-   
-    proxy:{
+  // server:{
+  //   port:5000,
+  //   proxy:{
       
-      '/api': 'https://url-shortner-backend-zeta.vercel.app' 
+  //     '/api':"http://localhost:3000",
       
-    },
-  },
+  //   },
+  // },
   plugins: [react()],
 })
   
