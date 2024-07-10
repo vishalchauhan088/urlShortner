@@ -27,15 +27,15 @@ function App() {
 
   const handleApiCall = async () => {
     try {
-      let url;
-      if( import.meta.env.VITE_ENV === 'Production'){
-        url = `${import.meta.VITE_PROD_URL}/api/v1/shorturl`
-        console.log(url);
-      }
-      else{
-        url = '/api/v1/shorturl'
-      }
-      const response = await axios.post(url, {
+      // let url;
+      // if( import.meta.env.VITE_ENV === 'Production'){
+      //   url = `${import.meta.VITE_PROD_URL}/api/v1/shorturl`
+      //   console.log(url);
+      // }
+      // else{
+      //   url = '/api/v1/shorturl'
+      // }
+      const response = await axios.post('https://url-shortner-backend-zeta.vercel.app/api/v1/shorturl', {
         originalUrl: inputValue
       });
       console.log(response);
