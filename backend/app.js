@@ -6,10 +6,10 @@ import cors from 'cors';
 
 const app = express();
 
-if(process.env.NODE_ENV === 'Production'){
-    app.use(cors({
-        origin:process.env.DOMAIN_URL_FROENTEND}))
-}
+// if(process.env.NODE_ENV === 'Production'){
+//     app.use(cors({
+//         origin:process.env.DOMAIN_URL_FROENTEND}))
+// }
 // Middleware
 app.use(express.json()); // Body parser middleware
 
