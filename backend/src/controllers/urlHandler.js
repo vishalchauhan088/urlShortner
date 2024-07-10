@@ -56,7 +56,7 @@ const createUrl = async ( req, res)=>{
         console.log('new short url created');
         let url;
         if(process.env.NODE_ENV === 'Production'){
-            url = `${process.env.DOMAIN}/api/v1/shorturl/${id}`;
+            url = `${process.env.DOMAIN}api/v1/shorturl/${id}`;
         }
         else{
             url = `http://${process.env.DOMAIN}:${process.env.PORT}/api/v1/shorturl/${id}`;
