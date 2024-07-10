@@ -6,6 +6,8 @@ import cors from 'cors';
 
 const app = express();
 
+app.use(cors())
+
 // if(process.env.NODE_ENV === 'Production'){
 //     app.use(cors({
 //         origin:process.env.DOMAIN_URL_FROENTEND}))
